@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "193341265239",
+    "project_id": "flast-chat-37982",
+    "storage_bucket": "flast-chat-37982.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193341265239:android:9540a34fc7b40dc055da12",
+        "android_client_info": {
+          "package_name": "com.mykaenobs.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193341265239-2i93dj4lemtfac9all7u3efl8gql6q17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw79J4RgPuF8TSwqnZFFDPzaiv5GsX5iE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193341265239-2i93dj4lemtfac9all7u3efl8gql6q17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
