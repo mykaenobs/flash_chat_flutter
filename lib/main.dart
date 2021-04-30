@@ -18,7 +18,7 @@ class ChatApp extends StatefulWidget {
 class _ChatAppState extends State<ChatApp> {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
-  void SomethingWentWrong() {}
+  void somethingWentWrong() {}
 
   @override
   Widget build(BuildContext context) {

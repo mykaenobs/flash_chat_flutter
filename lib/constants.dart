@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kLight = Colors.lightBlueAccent;
+
 const kScreenSize = TextStyle(
   fontSize: 16.0,
 );
@@ -46,5 +48,33 @@ const kTextFieldStyle = InputDecoration(
     ),
     borderSide: BorderSide(
         color: Colors.lightBlueAccent, width: 2.0, style: BorderStyle.solid),
+  ),
+);
+
+const kChatFieldStyle = InputDecoration(
+  filled: true,
+  fillColor: Colors.white,
+  hintText: 'Type your message here...',
+  hintStyle: TextStyle(
+    color: Colors.black26,
+    fontWeight: FontWeight.w700,
+    fontSize: 18.0,
+  ),
+  contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
+  // enabled: false,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(Radius.zero),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide.none,
+    borderRadius: BorderRadius.all(
+      Radius.zero,
+    ),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.zero,
+    ),
+    borderSide: BorderSide.none,
   ),
 );

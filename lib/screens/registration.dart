@@ -63,8 +63,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
               color: Colors.blue,
               onPressed: () async {
                 try {
-                  UserCredential newUser = await FirebaseAuth.instance
-                      .signInWithEmailAndPassword(
+                  final UserCredential newUser =
+                      await _auth.createUserWithEmailAndPassword(
                           email: email, password: password);
                   if (newUser != null) {
                     Navigator.pushNamed(context, ChatPage.chat);
