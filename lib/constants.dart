@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 const kLight = Colors.lightBlueAccent;
+const kDark = Colors.blue;
+const kBubbleRadius = 30.0;
 
 const kScreenSize = TextStyle(
   fontSize: 16.0,
@@ -57,12 +59,13 @@ const kChatFieldStyle = InputDecoration(
   hintText: 'Type your message here...',
   hintStyle: TextStyle(
     color: Colors.black26,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w600,
     fontSize: 18.0,
   ),
   contentPadding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
   // enabled: false,
   border: OutlineInputBorder(
+    borderSide: BorderSide.none,
     borderRadius: BorderRadius.all(Radius.zero),
   ),
   enabledBorder: OutlineInputBorder(
@@ -77,4 +80,9 @@ const kChatFieldStyle = InputDecoration(
     ),
     borderSide: BorderSide.none,
   ),
+);
+
+const kChatBubbleStyle = TextStyle(
+  fontSize: 15.0,
+  color: Colors.white,
 );
