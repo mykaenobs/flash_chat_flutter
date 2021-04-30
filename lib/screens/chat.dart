@@ -3,7 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flash_chat/constants.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-CollectionReference _fire = FirebaseFirestore.instance.collection('messages');
+CollectionReference _firestore =
+    FirebaseFirestore.instance.collection('messages');
 User loggedInUser;
 
 class ChatPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   Future<void> addMessage(String text, String sender) {
-    return _fire
+    return _firestore
         .add({
           'text': text,
           'sender': sender,
@@ -43,24 +44,14 @@ class _ChatPageState extends State<ChatPage> {
         .catchError((error) => print("Failed to add user: $error"));
   }
 
-  void messageStream() async {
-    await for (var snapshot in _fire.snapshots()) {
-      snapshot.docs.forEach((doc) {
-        print(doc.data());
-      });
-    }
-  }
-
   @override
   void initState() {
     super.initState();
     getCurrentUser();
-    messageStream();
   }
 
   @override
   Widget build(BuildContext context) {
-    messageStream();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kLight,
@@ -69,9 +60,8 @@ class _ChatPageState extends State<ChatPage> {
           IconButton(
             icon: Icon(Icons.close),
             onPressed: () {
-              // _auth.signOut();
-              // Navigator.pop(context);
-              messageStream();
+              _auth.signOut();
+              Navigator.pop(context);
             },
           ),
         ],
@@ -136,7 +126,7 @@ class MessagesStream extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: _fire.snapshots(),
+      stream: _firestore.snapshots(),
       builder: (context, snapshot) {
         List<MessageBubble> messageBubbles = [];
         if (!snapshot.hasData) {
